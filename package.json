@@ -1,0 +1,51 @@
+{
+  "name": "solid-radix",
+  "description": "Solid port of Radix UI Primitives",
+  "author": "Trent Mitchell-Borley <trent@trents.computer>",
+  "license": "MIT",
+  "version": "0.0.1",
+  "homepage": "https://trents.computer/radix",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TrentsPC/solid-radix"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "solid": "./dist/index.jsx",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc && rollup -c",
+    "prepublishOnly": "npm run build",
+    "test": "npm run test:types",
+    "test:types": "tsc --project tsconfig.test.json",
+    "pretty": "prettier --write \"{src,test}/**/*.{ts,tsx}\""
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-typescript": "^7.21.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@types/node": "^18.14.0",
+    "babel-preset-solid": "^1.6.10",
+    "prettier": "^2.8.4",
+    "rollup": "^3.17.2",
+    "solid-js": "^1.6.11",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.6.11"
+  }
+}
