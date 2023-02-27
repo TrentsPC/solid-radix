@@ -28,9 +28,10 @@
   "scripts": {
     "build": "tsc && rollup -c",
     "prepublishOnly": "npm run build",
+    "pretty": "prettier --write \"{src,test}/**/*.{ts,tsx}\"",
     "test": "npm run test:types",
     "test:types": "tsc --project tsconfig.test.json",
-    "pretty": "prettier --write \"{src,test}/**/*.{ts,tsx}\""
+    "watch": "concurrently --kill-others \"rollup -c -w\" \"tsc --w\""
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -40,6 +41,7 @@
     "@rollup/plugin-terser": "^0.4.0",
     "@types/node": "^18.14.0",
     "babel-preset-solid": "^1.6.10",
+    "concurrently": "^7.6.0",
     "prettier": "^2.8.4",
     "rollup": "^3.17.2",
     "solid-js": "^1.6.11",
