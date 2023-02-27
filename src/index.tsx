@@ -1,3 +1,4 @@
+export * from "./solid/AccessibleIcon";
 export * from "./solid/AspectRatio";
 export * from "./solid/Label";
 export * from "./solid/Presence";
