@@ -1,4 +1,10 @@
-import { JSX, children, createEffect, untrack } from "solid-js";
+import {
+  JSX,
+  children,
+  createEffect,
+  createRenderEffect,
+  untrack,
+} from "solid-js";
 import { isServer } from "solid-js/web";
 
 // Not too fond of how much i had to copy out of `solid-js/web`, but ssr seemed to break if i just imported
@@ -37,7 +43,7 @@ export function Slot(props: SlotProps) {
   // Get child
   const resolved = children(() => props.children);
 
-  createEffect(() => {
+  createRenderEffect(() => {
     const el = resolved();
     // We only care about Single children
     if (!el) return el;
@@ -59,6 +65,7 @@ export function Slot(props: SlotProps) {
     Object.keys(props).forEach((key) => {
       // Ignore children
       if (key === "children") return;
+      if (key === "ref") return;
 
       // Handle class
       if (key === "class") {
