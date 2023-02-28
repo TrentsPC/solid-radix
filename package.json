@@ -3,7 +3,7 @@
   "description": "Solid port of Radix UI Primitives",
   "author": "Trent Mitchell-Borley <trent@trents.computer>",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://trents.computer/radix",
   "repository": {
     "type": "git",
